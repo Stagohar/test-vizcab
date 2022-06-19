@@ -1,0 +1,30 @@
+.table-bloc {
+  .table-title {
+
+  }
+  table {
+     tr {
+       display: flex;
+       justify-content: center;
+       &:first-child {
+         background: lightgray;
+       }
+       &:nth-child(2n+2) {
+         background: lightblue;
+       }
+
+       td, th {
+         min-width: 140px;
+         text-align: center;
+         padding: 10px 5px;
+
+
+       }
+
+       &:not(:first-child):hover {
+         background: darken(lightblue, 10%);
+       }
+
+     }
+   }
+}

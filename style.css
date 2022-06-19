@@ -1,0 +1,22 @@
+.table-bloc table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.table-bloc table tr:first-child {
+  background: lightgray;
+}
+.table-bloc table tr:nth-child(2n+2) {
+  background: lightblue;
+}
+.table-bloc table tr td, .table-bloc table tr th {
+  min-width: 140px;
+  text-align: center;
+  padding: 10px 5px;
+}
+.table-bloc table tr:not(:first-child):hover {
+  background: #86c5da;
+}

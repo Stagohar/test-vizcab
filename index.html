@@ -1,0 +1,84 @@
+<script src="https://unpkg.com/vue@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="style.css">
+
+
+
+<div id="app">
+
+    <div class="table-bloc">
+        <h3 class="table-title">
+            Employees list
+        </h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Job Title</th>
+                <th>Departement</th>
+                <th>Company name</th>
+                <th>Experience in job</th>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Job Title</td>
+                <td>Departement</td>
+                <td>Company name</td>
+                <td>Experience in job</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Job Title</td>
+                <td>Departement</td>
+                <td>Company name</td>
+                <td>Experience in job</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Job Title</td>
+                <td>Departement</td>
+                <td>Company name</td>
+                <td>Experience in job</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Job Title</td>
+                <td>Departement</td>
+                <td>Company name</td>
+                <td>Experience in job</td>
+            </tr>
+
+            <tr v-for="info in infos">
+                <td>{{ info.id }}</td>
+                <td>{{ info.name }}</td>
+                <td>{{ info.job_title }}</td>
+                <td>{{ info.department }}</td>
+                <td>{{ info.company_name }}</td>
+                <td>{{ info.experience_in_job }}</td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+
+<script>
+    const { createApp } = Vue
+
+    createApp({
+        data() {
+            return {
+                infos: '',
+            }
+        },
+        mounted () {
+            axios
+                .get('https://my.api.mockaroo.com/employee.json?key=53b1b110')
+                .then(response => (this.infos = response.data))
+        }
+    }).mount('#app')
+</script>
